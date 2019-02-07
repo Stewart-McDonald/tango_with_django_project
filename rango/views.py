@@ -5,10 +5,9 @@ from rango.models import Page
 
 def index(request):
     category_list = Category.objects.order_by("-likes")[:5]
-    pages_list = Page.objects.order_by("-views")[:5]
-    print(pages_list[0])
-    print(pages_list)
-    context_dict = {'categories': category_list,'pages': pages_list}
+    page_list = Page.objects.order_by('-views')[:5]
+    print(category_list, page_list)
+    context_dict = {'categories': category_list, 'pages': page_list}
     return render(request, 'rango/index.html', context=context_dict)
 
 # Return a rendered response to send to the client.
@@ -33,9 +32,5 @@ def show_category(request, category_name_slug):
         context_dict['pages'] = None
     return render(request, 'rango/category.html', context_dict)
 
-
-def show_page(request, page_name_slug):
-    context_dict = {}
-#    try:
 
 

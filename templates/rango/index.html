@@ -8,7 +8,7 @@
 <body>
     <h1>Rango says...</h1>
     <div>hey there partner!</div>
-    <h2>Most Liked Catagories</h2>
+    <h2>Most Liked Categories</h2>
     <div>
     {% if categories %}
     <ul>
@@ -28,7 +28,7 @@
     <ul>
         {% for page in pages %}
             <li>
-                <a href="/rango/category/{{ page.category.slug }}">{{ page.title }}</a>
+                <a href="/rango/category/{{ page.url}}">{{ page.title }}</a>
             </li>
         {%  endfor %}
     </ul>
